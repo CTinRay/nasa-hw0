@@ -1,0 +1,3 @@
+
+- name: motd flag
+  copy: src=motd dest=/etc/motd

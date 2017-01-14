@@ -1,0 +1,8 @@
+- name: epel gpg key
+  rpm_key: state=present key=https://getfedora.org/static/352C64E5.txt
+
+- name: Enable epel repository
+  yum_repository:
+    name: epel
+    description: EPEL repo
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
