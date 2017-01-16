@@ -1,3 +1,2 @@
-
 - name: motd flag
-  copy: src=motd dest=/etc/motd
+  template: src=motd.j2 dest=/etc/motd
