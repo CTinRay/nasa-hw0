@@ -1,0 +1,17 @@
+
+- name: create home directory mount point
+  file:
+    path: /home/{{ flag2 }}
+    state: directory
+  
+- name: Mount home dir
+  mount:
+    name: /home/{{ flag2 }}
+    src: /dev/vda1
+    state: mounted
+    fstype: ext4
+
+- name: overwrite ldap homedir
+  lineinfile:
+    dest: /etc/nslcd.conf
+    line: "map passwd  homeDirectory \"/home/{{ flag2 }}/$uid\""
