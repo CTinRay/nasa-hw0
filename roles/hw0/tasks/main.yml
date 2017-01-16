@@ -1,2 +1,4 @@
+- include: auth.yml
+  
 - name: motd flag
   template: src=motd.j2 dest=/etc/motd
