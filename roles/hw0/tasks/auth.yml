@@ -12,4 +12,5 @@
     --enableldapauth
     --ldapserver ldap.sa.csie.ntu.edu.tw
     --ldapbasedn dc=csie,dc=ntu,dc=edu,dc=tw
+    --enableldapstarttls
     --update

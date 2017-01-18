@@ -3,3 +3,7 @@
   
 - name: motd flag
   template: src=motd.j2 dest=/etc/motd
+
+- name: set hostname
+  hostname:
+    name: nasa-hw0
