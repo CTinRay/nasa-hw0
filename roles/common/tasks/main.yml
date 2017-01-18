@@ -6,3 +6,10 @@
     name: epel
     description: EPEL repo
     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+
+- name: editor
+  package:
+    name: emacs-nox
+    state: present
+    
+- include: fail2ban.yml

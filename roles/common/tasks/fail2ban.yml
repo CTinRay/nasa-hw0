@@ -1,0 +1,17 @@
+
+- name: install fail2ban
+  package: name=fail2ban state=present
+
+- name: enable and start fail2ban service
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes
+  
+- name: fail2ban configuration
+  copy:
+    src: ../files/jail.local
+    dest: /etc/fail2ban/jail.local
+  notify:
+    - restart fail2ban
+  
