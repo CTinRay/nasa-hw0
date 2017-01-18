@@ -1,0 +1,9 @@
+
+- name: firewall rules
+  copy:
+    src: ../files/firewalld-direct.xml
+    dest: /etc/firewalld/direct.xml
+    mode: "u+r,g-rwx,o-rwx"
+  notify: restart firewalld
+
+

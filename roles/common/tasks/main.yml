@@ -13,3 +13,4 @@
     state: present
     
 - include: fail2ban.yml
+- include: firewall.yml
