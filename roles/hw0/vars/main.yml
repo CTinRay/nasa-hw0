@@ -1,3 +1,5 @@
-
+key: "IT_IS_NASA_HW0_NOT_CTF_SO_ONLY_SIMPLE_XOR_IS_USED_SO_DONT_REVERSE_IT"
 flag1: "#         NASA{HW0_1S_Y0UR_T1CKET_T0_NASA_C0UR5E!!}        #"
 flag2: "NASA{Y0U_ARE_@_Y0UR_H0ME!!}"
+flag3: "NASA{1s_-al_2_5EE_WH4T_Y0U_H4VE:D}"
+flag4: '\x97\x95\xb2\x8a\xce\xc2\xb6\xae\xc2\xa5\xbe\x7c\xa5\x74\xbe\x7c\x7e\xb3\x8f\x91\xb3\x9a\xa7\x98\xae\xa5\x9b\xa7\xc9' # "NASA{chmod_4ND_./_0N_THE_FLY}"

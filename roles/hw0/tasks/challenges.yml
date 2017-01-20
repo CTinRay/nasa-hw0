@@ -1,0 +1,22 @@
+- name: install gcc
+  package:
+    name: gcc
+    state: present
+
+- name: copy source code of challenges
+  copy:
+    src: ../files/challenges
+    dest: /root/
+    mode: 0600
+
+- name: copy flags of challenges
+  template:
+    src: ../templates/flag.mk.j2
+    dest: /root/challenges/flag.mk
+    mode: 0600
+
+- name: compile challenges
+  command: make
+  args:
+    chdir: /root/challenges/
+  
