@@ -3,6 +3,11 @@
     name: gcc
     state: present
 
+- name: install zip
+  package:
+    name: zip
+    state: present
+
 - name: copy source code of challenges
   copy:
     src: ../files/challenges
