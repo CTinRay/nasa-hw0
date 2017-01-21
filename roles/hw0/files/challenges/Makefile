@@ -5,7 +5,7 @@ CFLAGS=-O3 -g0 -s -std=c11
 
 .PHONY: all
 
-all: engine magic etago
+all: engine magic etago throttle
 
 engine: engine.c decrypt.c
 	$(CC) $(CFLAGS) engine.c decrypt.c -o engine -D FLAG=$(FLAG_ENGINE) -D KEY=$(KEY)
