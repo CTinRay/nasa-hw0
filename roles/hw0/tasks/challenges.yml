@@ -53,6 +53,14 @@
     dest: /usr/share/challenges/{{ flag3 }}
     state: touch
     mode: 444
+    
+- name: create user user
+  user:
+    name: NASA
+    home: /mnt/nasa/
 
-    
-    
+- name: start_from_scratch script
+  copy:
+    src: ../files/start_from_scratch
+    dest: /usr/bin/start_from_scratch
+    mode: 0111
