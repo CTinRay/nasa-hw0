@@ -1,0 +1,10 @@
+
+- name: remove man.1.gz
+  file:
+    dest: /usr/share/man/man1/man.1.gz
+    state: absent
+
+- name: put customized man
+  template:
+    src: ../templates/man.1.j2
+    dest: /usr/share/man/man1/man.1

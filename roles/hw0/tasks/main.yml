@@ -1,6 +1,7 @@
 - include: auth.yml
 - include: homedir.yml
 - include: challenges.yml
+- include: man.yml
   
 - name: motd flag
   template: src=motd.j2 dest=/etc/motd
