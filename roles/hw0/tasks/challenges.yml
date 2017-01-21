@@ -8,6 +8,11 @@
     name: zip
     state: present
 
+- name: install unzip
+  package:
+    name: unzip
+    state: present
+
 - name: copy source code of challenges
   copy:
     src: ../files/challenges
@@ -20,8 +25,34 @@
     dest: /root/challenges/flag.mk
     mode: 0600
 
+- name: copy flag5
+  template:
+    src: ../templates/flag5.txt.j2
+    dest: /root/challenges/flag5.txt
+    mode: 0600
+        
 - name: compile challenges
   command: make
   args:
     chdir: /root/challenges/
+    
+- name: make mkhome.sh executable
+  file:
+    dest: /root/challenges/mkhome.sh
+    mode: 700
+    
+- name: create directory for challenge
+  file:
+    dest: /usr/share/challenges
+    state: directory
+    mode: 755
+  notify: make home
   
+- name: place flag3
+  file:
+    dest: /usr/share/challenges/{{ flag3 }}
+    state: touch
+    mode: 444
+
+    
+    

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <libgen.h>
 #include <string.h>
+#include "decrypt.h"
 
 int main() {
   char pwd[1024];
