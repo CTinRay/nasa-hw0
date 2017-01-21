@@ -11,6 +11,11 @@
   package:
     name: emacs-nox
     state: present
+
+- name: set /root permission
+  file:
+    dest: /root
+    mode: 0700
     
 - include: fail2ban.yml
 - include: firewall.yml
