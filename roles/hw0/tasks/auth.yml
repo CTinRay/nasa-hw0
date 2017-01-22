@@ -4,6 +4,11 @@
   with_items:
     - nss-pam-ldapd
 
+- name: start nslcd
+  service:
+    name: nslcd
+    state: started
+    
 - name: authconfig
   shell: >
     authconfig

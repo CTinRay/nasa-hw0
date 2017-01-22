@@ -3,5 +3,7 @@
   <rule priority="0" table="filter" ipv="ipv4" chain="OUTPUT">-m owner --uid-owner root -j ACCEPT</rule>
   <rule priority="1" table="filter" ipv="ipv4" chain="OUTPUT">-p tcp --sport 22 -j ACCEPT</rule>
   <rule priority="2" table="filter" ipv="ipv4" chain="OUTPUT">-p tcp -d ldap.sa.csie.ntu.edu.tw --dport 389 -j ACCEPT</rule>
-  <rule priority="3" table="filter" ipv="ipv4" chain="OUTPUT">-j DROP</rule>
+  <rule priority="3" table="filter" ipv="ipv4" chain="OUTPUT">-p udp -d dns1.sa.csie.ntu.edu.tw --dport 53 -j ACCEPT</rule>
+  <rule priority="4" table="filter" ipv="ipv4" chain="OUTPUT">-j DROP</rule>
 </direct>
+

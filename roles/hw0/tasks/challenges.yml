@@ -39,20 +39,20 @@
 - name: make mkhome.sh executable
   file:
     dest: /root/challenges/mkhome.sh
-    mode: 700
+    mode: 0700
     
 - name: create directory for challenge
   file:
     dest: /usr/share/challenges
     state: directory
-    mode: 755
+    mode: 0755
   notify: make home
   
 - name: place flag3
   file:
     dest: /usr/share/challenges/{{ flag3 }}
     state: touch
-    mode: 444
+    mode: 0444
     
 - name: create user user
   user:
@@ -63,4 +63,4 @@
   copy:
     src: ../files/start_from_scratch
     dest: /usr/bin/start_from_scratch
-    mode: 0111
+    mode: 0555
