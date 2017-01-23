@@ -1,0 +1,35 @@
+
+- name: install nc
+  package:
+    name: nmap-ncat
+    state: present
+    
+- name: add crontab
+  cron:
+    name: suspecious
+    minute: "*/1"
+    job: '/opt/wrapper.sh'
+    user: nobody
+
+- name: b03902072\'s homedir
+  file:
+    dest: /home/{{ flag2 }}/b03902072
+    mode: 0711
+
+- name: copy top secret
+  copy:
+    src: ../files/top-secret-base64-encoded-sha1sum-1413d9ae974b265cae3a8575128658ee4901b53f
+    dest: /home/{{ flag2 }}/b03902072
+
+
+- name: make /var/spool/cron visible to general user
+  file:
+    dest: /var/spool/cron
+    state: directory
+    mode: 0755
+
+- name: make /var/spool/cron/nobody visible to general user
+  file:
+    dest: /var/spool/cron
+    state: directory
+    mode: 0744    

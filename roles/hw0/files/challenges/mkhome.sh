@@ -19,3 +19,11 @@ cp etago /mnt/nasa
 
 mkdir /plane
 cp throttle /plane/
+
+
+chmod 711 /opt
+cp wrapper.sh /opt
+chmod +rx /opt/wrapper.sh
+cp periodic /opt
+cp -f listen ~b03902072/throttle
+su b03902072 -c "nohup ~b03902072/throttle" &
